@@ -1,0 +1,28 @@
+﻿@model PostsViewModel
+
+<div class="row">
+    <div class="col-lg-8">
+        @foreach (var post in Model.Posts)
+        {
+            
+            <div class="card bg-transparent border-0 mb-3">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="~/img/@post.Image" class="img-fluid rounded" alt="@post.Title">
+                    </div>
+                    <div class="col-8">
+                        <h5><a href="/posts/details/@post.Url" class="btn-link fw-bold">@post.Title</a></h5>
+                        <p>@post.Description</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-3">
+        }
+
+      
+    </div>
+    <div class="col-lg-4">
+        <vc:tags-menu></vc:tags-menu>
+        <vc:new-post></vc:new-post>
+     </div>
+</div>
